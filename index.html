@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To-Do List App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <center>
+    <div class="todo">
+      <h2>To-Do List</h2>
+      <div class="border">
+        <input type="text" id="box" placeholder="Enter your task" />
+        <button onclick="addTask()">Add</button>
+        <ul id="task"></ul>
+      </div>
+    </div>
+  </center>
+
+  <script>
+    function addTask() {
+      const taskInput = document.getElementById("box");
+      const taskValue = taskInput.value.trim();
+      if (taskValue === "") return;
+
+      const li = document.createElement("li");
+      li.innerText = taskValue + " ";
+      li.onclick = function () 
+      {
+        li.style.backgroundColor = "lightgreen";
+      };
+      const delBtn = document.createElement("button");
+      delBtn.innerText = "x";
+      delBtn.onclick = function (event) 
+      {
+        event.stopPropagation(); 
+        li.remove();
+      };
+
+      li.appendChild(delBtn);
+      document.getElementById("task").appendChild(li);
+      taskInput.value = "";
+    }
+  </script>
+</body>
+</html>
