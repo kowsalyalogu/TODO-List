@@ -11,7 +11,7 @@ A simple and interactive To-Do List web application built using **HTML**, **CSS*
 
 ## 🖼️ Preview
 
-![alt text](image.png)
+![alt text](previewimage.png)
 
 ## 💻 Technologies Used
 
